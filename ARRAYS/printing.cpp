@@ -49,32 +49,56 @@ using namespace std;
 
 // TRANSPOSE
 
-void transposeOfMatrix(int arr[4][4], int n, int m)
-{
-  for (int i = 0; i < n; i++)
-  {
-    for (int j = i; j < m; j++)
-    {
-    swap(arr[i][j],arr[j][i]);
-    }
+// void transposeOfMatrix(int arr[4][4], int n, int m)
+// {
+//   for (int i = 0; i < n; i++)
+//   {
+//     for (int j = i+1; j < m; j++)   //j=i initialisation is also correct
+
+//     {
+//     swap(arr[i][j],arr[j][i]);
+//     }
+//   }
+
+//  for (int i = 0; i < n; i++)
+//   {
+//     for (int j = 0; j < m; j++)
+//     {
+//     cout<<arr[i][j]<<" ";
+//     }
+//     cout<<endl;
+//   }
+  
+// }
+
+// int main()
+// {
+//   int arr[][4]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+  
+//   int n = 4, m = 4;
+//   transposeOfMatrix(arr,n,m);
+//   return 0;
+// }
+
+
+//SOR NEGATIVES AND POSITIVES
+void func(vector<int> arr,int n){
+  int j=0;
+ for(int i=0;i<n;i++){
+  if(arr[i]<0){
+    swap(arr[i],arr[j]);
+    j++;
+  }
+ }
+ for(int i=0;i<n;i++){
+  cout<<arr[i]<<" ";
+ }
   }
 
- for (int i = 0; i < n; i++)
-  {
-    for (int j = 0; j < m; j++)
-    {
-    cout<<arr[i][j]<<" ";
-    }
-    cout<<endl;
-  }
-  
-}
-
-int main()
-{
-  int arr[][4]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-  
-  int n = 4, m = 4;
-  transposeOfMatrix(arr,n,m);
+int main(){
+  vector<int> arr={5,1,-3,4,-1,0,-8,7,-10};
+  // vector<int> arr={23,-7,12,-10,-11,40,60};
+  int n=arr.size();
+  func(arr,n);
   return 0;
 }
